@@ -50,9 +50,6 @@ transporter.sendMail(options, (err, info)=> {
 })
 
 
-
-
-
 var con = mysql.createConnection({
     host: "localhost",
     user: "root",
