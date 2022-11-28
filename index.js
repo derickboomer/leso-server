@@ -8,46 +8,50 @@ const fileUpload = require('express-fileupload')
 const multer = require('multer')
 const path = require ('path')
 
-const storage  = multer.diskStorage({
-    destination: '/Images', 
-    filename:(req, file, cb)=>{
-        console.log(file)
-        cb(null, `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`)
-    }, 
-    
-    
-})
+// const upload = multer({storage: storage});
 
-const upload = multer({storage: storage});
+// const storage  = multer.diskStorage({
+//     destination: '/Images', 
+//     filename:(req, file, cb)=>{
+//         console.log(file)
+//         cb(null, `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`)
+//     }, 
+    
+    
+// })
+
+
+// const transporter = nodemailer.createTransport ({
+//     service: "hotmail",
+//     auth: {
+//         user:"leso.capstone.test@outlook.com",
+//         pass:"LESO!123",
+//     },
+// })
+
+
+// const options = {
+//     from:"leso.capstone.test@outlook.com",
+//     to:"rhoderick.rodriguez.cics@gmail.com",
+//     subject: "Sending email with node js",
+//     text: "wow that is simple"
+// }
+
+
+// transporter.sendMail(options, (err, info)=> {
+//     if(err){
+//         console.log(err);
+//         return;
+//     }   
+//     console.log
+// })
+
 
 
 app.use(fileUpload());
 app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended:true}))
-
-const transporter = nodemailer.createTransport ({
-    service: "hotmail",
-    auth: {
-        user:"leso.capstone.test@outlook.com",
-        pass:"LESO!123",
-    },
-})
-
-const options = {
-    from:"leso.capstone.test@outlook.com",
-    to:"rhoderick.rodriguez.cics@gmail.com",
-    subject: "Sending email with node js",
-    text: "wow that is simple"
-}
-
-transporter.sendMail(options, (err, info)=> {
-    if(err){
-        console.log(err);
-        return;
-    }   
-    console.log
-})
 
 
 var con = mysql.createConnection({
@@ -503,14 +507,14 @@ app.post('/track', (req,res)=>{
 })
 
 // PORT
-// const port = process.env.PORT || 3001;
-// app.listen(port, () => {
-//     console.log("Lisenting on port " + port + "..." );
-//     });
+const port = process.env.PORT || 3001;
+app.listen(port, () => {
+    console.log("Lisenting on port " + port + "..." );
+    });
 
-app.listen(process.env.PORT || PORT, () =>{
-    console.log("Lisenting on port " + PORT + "..." )
-})
+// app.listen(process.env.PORT || PORT, () =>{
+//     console.log("Lisenting on port " + PORT + "..." )
+// })
 
 
 
