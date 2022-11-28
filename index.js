@@ -506,10 +506,14 @@ app.post('/track', (req,res)=>{
 })
 
 // PORT
-const port = process.env.PORT || 3001;
-app.listen(port, () => {
-    console.log("Lisenting on port " + port + "..." );
-    });
+// const port = process.env.PORT || 3001;
+// app.listen(port, () => {
+//     console.log("Lisenting on port " + port + "..." );
+//     });
+
+app.listen(process.env.PORT || PORT, () =>{
+    console.log("Lisenting on port " + PORT + "..." )
+})
 
 
 
