@@ -38,6 +38,8 @@ app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+console.log("working");
+
 var con = mysql.createConnection({
   host: "localhost",
   user: "root",
@@ -749,11 +751,15 @@ app.post("/filter", (req, res) => {
 });
 
 // PORT
-const port = process.env.PORT || 3001;
-app.listen(port, () => {
-  console.log("Listening on port " + port + "...");
-});
+// const port = process.env.PORT || 3002;
+// app.listen(port, () => {
+//   console.log("Listening on port " + port + "...");
+// });
 
-// app.listen(process.env.PORT || PORT, () =>{
-//     console.log("Lisenting on port " + PORT + "..." )
-// })
+app.listen(process.env.PORT || 3000, function () {
+  console.log(
+    "Express server listening on port %d in %s mode",
+    this.address().port,
+    app.settings.env
+  );
+});
