@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/react-gh-pages/static/css/main.e26c3974.css",
+    "main.js": "/react-gh-pages/static/js/main.3d0cbdbb.js",
+    "static/media/LOGONEW.png": "/react-gh-pages/static/media/LOGONEW.a2c0bced0c559519b485.png",
+    "static/media/UST LOGO.png": "/react-gh-pages/static/media/UST LOGO.395acd7a3800f44471a4.png",
+    "static/media/CMRS.png": "/react-gh-pages/static/media/CMRS.fef444fd341a1000ab06.png",
+    "static/media/LOGO.jpg": "/react-gh-pages/static/media/LOGO.ff0be9d489dcd0ee7efd.jpg",
+    "index.html": "/react-gh-pages/index.html",
+    "main.e26c3974.css.map": "/react-gh-pages/static/css/main.e26c3974.css.map",
+    "main.3d0cbdbb.js.map": "/react-gh-pages/static/js/main.3d0cbdbb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e26c3974.css",
+    "static/js/main.3d0cbdbb.js"
+  ]
+}
