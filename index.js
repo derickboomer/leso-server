@@ -41,11 +41,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 console.log("working");
 
 var con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "password",
-  database: "leso_database",
+  host: "us-cdbr-east-06.cleardb.net",
+  user: "b37e5fe998abae",
+  password: "10579c02",
+  database: "heroku_1eb9286ba863d36",
 });
+
+// mysql://b37e5fe998abae:10579c02@us-cdbr-east-06.cleardb.net/heroku_1eb9286ba863d36?reconnect=true
 
 con.connect(function (err) {
   if (err) throw err;
@@ -751,15 +753,15 @@ app.post("/filter", (req, res) => {
 });
 
 // PORT
-// const port = process.env.PORT || 3002;
-// app.listen(port, () => {
-//   console.log("Listening on port " + port + "...");
-// });
-
-app.listen(process.env.PORT || 3000, function () {
-  console.log(
-    "Express server listening on port %d in %s mode",
-    this.address().port,
-    app.settings.env
-  );
+const port = process.env.PORT || 3002;
+app.listen(port, () => {
+  console.log("Listening on port " + port + "...");
 });
+
+// app.listen(process.env.PORT || 3000, function () {
+//   console.log(
+//     "Express server listening on port %d in %s mode",
+//     this.address().port,
+//     app.settings.env
+//   );
+// });
